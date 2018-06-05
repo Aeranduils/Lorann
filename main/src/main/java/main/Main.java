@@ -2,28 +2,21 @@ package main;
 
 import java.sql.SQLException;
 
-import controller.ControllerFacade;
-import model.ModelFacade;
-import view.ViewFacade;
+import javax.swing.JFrame;
 
-public abstract class Main {
+import controller.Controller;
+import model.Model;
+import view.View;
 
-	/**
-	 * 
-	 * The main method.
-	 *
-	 * @param args
-	 *            the arguments
-	 */
+public abstract class Main extends JFrame {
 
-	public static void main(final String[] args) {
-		final ControllerFacade controller = new ControllerFacade(new ViewFacade(), new ModelFacade());
+	public static void main(final String[] args) throws SQLException {
+		Model model = new Model();
+		View view = new View();
+		Controller controller = new Controller(view, model);
+		view.setController(controller);
+		controller.start();
 
-		try {
-			controller.start();
-		} catch (final SQLException exception) {
-			exception.printStackTrace();
-		}
 	}
 
 }

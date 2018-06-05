@@ -1,18 +1,38 @@
 package view;
 
-/**
- * <h1>The Interface IView.</h1>
- *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
- * @version 1.0
- */
-public interface IView {
+import java.util.Observer;
 
-    /**
-     * Display message.
-     *
-     * @param message
-     *            the message
-     */
-    void displayMessage(String message);
+import controller.IController;
+
+/**
+ * 
+ * @author flori
+ *
+ */
+
+public interface IView {
+	/**
+	 * get the observer
+	 * 
+	 * @return observer
+	 */
+	Observer getObserver();
+
+	/**
+	 * Set visible the frame
+	 */
+	void openFrame();
+
+	/**
+	 * Set the controller
+	 * 
+	 * @param controller
+	 */
+	void setController(IController controller);
+
+	/**
+	 * Repaint the components
+	 */
+	void repaint();
+
 }

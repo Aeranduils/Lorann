@@ -1,11 +1,31 @@
 package controller;
 
+import model.IModel;
+import view.Order;
+
 /**
- * <h1>The Interface IController.</h1>
  * 
- * @author Jean-Aymeric DIET jadiet@cesi.fr
- * @version 1.0
+ * @author flori
+ *
  */
 public interface IController {
+	/**
+	 * Get the order
+	 * 
+	 * @param order
+	 */
+	public void orderPerform(Order order);
+
+	/**
+	 * Set the lorann model
+	 * 
+	 * @param model
+	 */
+	public void setModel(IModel model);
+
+	/**
+	 * Begin the game
+	 */
+	public void start();
 
 }

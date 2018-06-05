@@ -1,44 +1,71 @@
 package model;
 
-import java.sql.SQLException;
-import java.util.List;
+import java.util.Observable;
 
 /**
- * <h1>The Interface IModel.</h1>
+ * 
+ * @author flori
  *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
- * @version 1.0
  */
 public interface IModel {
+	/**
+	 * Get the Level
+	 * 
+	 * @return level
+	 */
+	ILevel getLevel();
 
-    /**
-     * Gets the example by id.
-     *
-     * @param id
-     *            the id
-     * @return the example by id
-     * @throws SQLException
-     *             the SQL exception
-     */
-    Example getExampleById(int id) throws SQLException;
+	/**
+	 * Get the observable
+	 * 
+	 * @return observable
+	 */
 
-    /**
-     * Gets the example by name.
-     *
-     * @param name
-     *            the name
-     * @return the example by name
-     * @throws SQLException
-     *             the SQL exception
-     */
-    Example getExampleByName(String name) throws SQLException;
+	Observable getObservable();
 
-    /**
-     * Gets the all examples.
-     *
-     * @return the all examples
-     * @throws SQLException
-     *             the SQL exception
-     */
-    List<Example> getAllExamples() throws SQLException;
+	/**
+	 * LevelTuto is loaded ?
+	 */
+	boolean loadTuto();
+
+	/**
+	 * Load the tuto level
+	 */
+	void loadTuto1();
+
+	/**
+	 * Level is loaded ?
+	 * 
+	 * @param id
+	 * 
+	 */
+	boolean loadLevel(int id);
+
+	/**
+	 * 
+	 */
+	void flush();
+
+	/**
+	 * Get Element
+	 * 
+	 * @param y
+	 * @param x
+	 * @return
+	 */
+	IElement getElement(int y, int x);
+
+	/**
+	 * Get element tab
+	 * 
+	 * @return
+	 */
+	IElement[][] getElements();
+
+	/**
+	 * Get lorann player
+	 * 
+	 * @return lorann
+	 */
+	ILorann getLorann();
 }
