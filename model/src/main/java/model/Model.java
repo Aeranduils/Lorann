@@ -46,6 +46,7 @@ public class Model extends Observable implements IModel {
 		this.level.setElement(1, 5, new VerticalWall(1, 5));
 		this.level.setElement(19, 5, new VerticalWall(19, 5));
 		this.level.setElement(18, 6, new Door(5, 7));
+		this.level.setElement(0, 0, new HorizontalWall(0, 0));
 
 	}
 

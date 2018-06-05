@@ -1,0 +1,1 @@
+C:\Progra~1\JAVA\jdk-10.0.1\bin\javadoc.exe @options @packages
